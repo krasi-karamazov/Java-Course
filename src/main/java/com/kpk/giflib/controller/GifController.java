@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by krasi on 3/7/2017.
@@ -22,7 +23,9 @@ public class GifController {
     private GifRepository gifRepository;
 
     @RequestMapping(value = "/")
-    public String listGifs() {
+    public String listGifs(ModelMap modelMap) {
+        final List<Gif> allGifs = gifRepository.getAllGifs();
+        modelMap.put("all_gifs", allGifs);
         return "home";
     }
 

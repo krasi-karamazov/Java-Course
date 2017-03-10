@@ -10,12 +10,14 @@ public class Gif {
     private Date dateUploaded;
     private String userName;
     private boolean isFavorite;
+    private int categoryId;
 
-    public Gif(String name, Date dateUploaded, String userName, boolean isFavorite) {
+    public Gif(String name, Date dateUploaded, String userName, boolean isFavorite, int categoryId) {
         this.name = name;
         this.dateUploaded = dateUploaded;
         this.userName = userName;
         this.isFavorite = isFavorite;
+        this.categoryId = categoryId;
     }
 
     public Gif() {
@@ -54,5 +56,11 @@ public class Gif {
         isFavorite = favorite;
     }
 
+    public int getCategoryId() {
+        return categoryId;
+    }
 
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 }
